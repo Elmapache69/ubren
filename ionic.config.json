@@ -1,0 +1,7 @@
+{
+  "name": "Ubren",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
