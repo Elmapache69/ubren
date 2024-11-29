@@ -1,0 +1,46 @@
+<ion-content>
+  <ion-toolbar>
+    <h1 [routerLink]="['/home']">Te Llevo App</h1>
+    <ion-buttons slot="end">
+      <ion-button (click)="cambiarTema()">
+        <ion-icon slot="icon-only" [name]="icono ? 'sunny' : 'moon'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <div id="contenedor">
+    <h2>Viajes Disponibles</h2>
+    <ion-list>
+      <ion-card *ngFor="let viaje of viajes">
+        <ion-card-header>
+          <ion-card-title>Viaje</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p><strong>Origen:</strong> {{ viaje.origen }}</p>
+          <p><strong>Destino:</strong> {{ viaje.destino }}</p>
+          <p><strong>Fecha:</strong> {{ viaje.fecha }}</p>
+          <p><strong>Conductor:</strong> {{ viaje.conductor }}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button [routerLink]="['/perfil']">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button [routerLink]="['/solicitar']">
+      <ion-icon name="car-outline"></ion-icon>
+      <ion-label>Solicitar Viaje</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button [routerLink]="['/realizar']">
+      <ion-icon name="navigate-outline"></ion-icon>
+      <ion-label>Realizar Viaje</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

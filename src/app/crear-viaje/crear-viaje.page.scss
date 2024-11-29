@@ -1,0 +1,124 @@
+#contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  row-gap: 15px;
+  background-color: var(--fondo);
+  padding: 20px;
+
+  ion-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--ion-card-background, #ffffff);
+  }
+
+  ion-item {
+    --background: transparent;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center; /* Centra el contenido dentro del ion-item */
+    align-items: center;
+    flex-direction: column; /* Apila los elementos verticalmente */
+  }
+
+  ion-label {
+    font-size: 1rem;
+    color: var(--texto, #000000);
+    text-align: center; /* Centra el texto del label */
+    margin-bottom: 5px;
+  }
+
+  ion-input, ion-datetime {
+    --padding-start: 15px;
+    --padding-end: 15px;
+    background-color: var(--fondo-input, #f7f7f7);
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 8px;
+    color: var(--texto-input, #000000);
+    padding: 5px;
+    width: 100%;
+    max-width: 400px; /* Limita el ancho */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto; /* Asegura que esté centrado */
+  }
+
+  button {
+    display: block;
+    margin: 15px auto;
+    height: 2.5rem;
+    width: 30%;
+    text-align: center;
+    border-radius: 1.25rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+
+  button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+
+  input {
+    height: 2.5rem;
+    width: 25%;
+    text-align: center;
+    border-radius: 1.25rem;
+    border: none;
+    outline: none;
+}
+
+input {
+    color: var(--texto-input);
+    background-color: var(--fondo-input);
+}
+
+p {
+    color: var(--textos);
+    cursor: pointer;
+    font-size: .8rem;
+}
+}
+
+h2 {
+  text-align: center;
+  color: var(--texto, #000000);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  transition: color 0.5s ease;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+  button {
+    width: 50%;
+  }
+
+  ion-datetime {
+    max-width: 100%;
+  }
+}
+ion-footer {
+  ion-tab-button {
+      --color-selected: #ffffff; /* Texto blanco cuando el botón está seleccionado */
+      --color: #ffffff; /* Texto blanco cuando no está seleccionado */
+
+      &:active {
+          --ripple-color: #ffffff; /* Cambia la animación a blanco cuando se presiona */
+          --color: #ffffff; /* Cambia el color del texto a blanco cuando se presiona */
+      }
+
+      &:focus {
+          --ripple-color: #ffffff; /* Asegura que la animación de ripple también sea blanca al enfocar */
+          --color: #ffffff; /* Cambia el color del texto a blanco cuando se enfoca */
+      }
+  }
+}

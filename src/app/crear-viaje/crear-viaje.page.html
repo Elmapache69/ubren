@@ -1,0 +1,51 @@
+<ion-content>
+  <ion-toolbar>
+    <h1 [routerLink]="['/home']">Te Llevo App</h1>
+    <ion-buttons slot="end">
+      <ion-title>
+        {{ usuario.nombre }}
+      </ion-title>
+      <ion-item>
+        <ion-select [(ngModel)]="rolSeleccionado" (ionChange)="guardarRol()" placeholder="Rol">
+          <ion-select-option value="pasajero">Pasajero</ion-select-option>
+          <ion-select-option value="conductor">Conductor</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button (click)="cambiarTema()">
+        <ion-icon slot="icon-only" [name]="icono ? 'sunny' : 'moon'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <div id="contenedor">
+    <h2>Registro del Viaje</h2>
+
+        <input [(ngModel)]="viaje.destino" placeholder="Destino">
+    
+        <ion-label position="stacked">Fecha</ion-label>
+        <ion-datetime display-format="YYYY-MM-DD" [(ngModel)]="viaje.fecha"></ion-datetime>
+        
+      <!-- Botón con clase personalizada -->
+      <button class="custom-button" (click)="guardarViaje()">Guardar Viaje</button>
+    
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button [routerLink]="['/perfil']">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button [routerLink]="['/solicitar']">
+      <ion-icon name="car-outline"></ion-icon>
+      <ion-label>Solicitar Viaje</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button [routerLink]="['/realizar']">
+      <ion-icon name="navigate-outline"></ion-icon>
+      <ion-label>Realizar Viaje</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

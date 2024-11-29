@@ -1,0 +1,20 @@
+<ion-content>
+  <ion-toolbar>
+    <h1 [routerLink]="['/home']">Te Llevo App</h1>
+    <ion-buttons slot="end">
+      <ion-button (click)="cambiarTema()">
+        <ion-icon slot="icon-only" [name]="icono ? 'sunny' : 'moon'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <div id="contenedor">
+    <input type="text" placeholder="Nombre " [(ngModel)]="nombre">
+    <input type="text" placeholder="Tu correo Duoc" [(ngModel)]="email">
+    <input type="text" placeholder="RUT" [(ngModel)]="rut">
+    <input type="password" placeholder="Contraseña" [(ngModel)]="password">
+    <input type="password" placeholder="Confirmar Contraseña" [(ngModel)]="confirmPassword">
+
+    <button expand="full" (click)="registrar()" [disabled]="!esRegistroValido()">Registrar</button>
+  </div>
+</ion-content>

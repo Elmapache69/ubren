@@ -1,0 +1,92 @@
+#contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  row-gap: 15px;
+  background-color: var(--fondo);
+  padding: 20px; /* Espaciado en los bordes del contenedor */
+
+  ion-icon {
+      color: var(--icono);
+      font-size: 6rem;
+  }
+
+  input, button {
+      height: 2.5rem;
+      width: 30%;
+      text-align: center;
+      border-radius: 1.25rem;
+      border: none;
+      outline: none;
+  }
+
+  input {
+      color: var(--texto-input);
+      background-color: var(--fondo-input);
+  }
+
+  p {
+      color: var(--textos);
+      cursor: pointer;
+      font-size: .8rem;
+  }
+}
+
+h2 {
+  color: var(--texto, #000000); /* Usa la variable dinámica de color */
+  font-size: 1.5rem; /* Ajusta el tamaño del texto */
+  text-align: center; /* Centra el texto */
+  margin-bottom: 15px; /* Espaciado inferior */
+  transition: color 0.5s ease; /* Transición suave al cambiar de tema */
+}
+
+ion-card {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 600px; /* Limita el tamaño máximo */
+  margin: 20px 0; /* Margen vertical */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  background-color: var(--ion-card-background, #ffffff); /* Fondo blanco por defecto */
+}
+
+ion-card-title, ion-card-subtitle {
+  text-align: center; /* Títulos centrados */
+  margin-bottom: 10px; /* Espaciado entre títulos */
+}
+
+ion-card-content {
+  text-align: left; /* Contenido alineado a la izquierda */
+  font-size: 1rem; /* Tamaño de fuente legible */
+}
+
+#tema {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 1.5rem;
+  color: var(--textos);
+}
+
+#contenedor, input {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+ion-footer {
+  ion-tab-button {
+      --color-selected: #ffffff; /* Texto blanco cuando el botón está seleccionado */
+      --color: #ffffff; /* Texto blanco cuando no está seleccionado */
+
+      &:active {
+          --ripple-color: #ffffff; /* Cambia la animación a blanco cuando se presiona */
+          --color: #ffffff; /* Cambia el color del texto a blanco cuando se presiona */
+      }
+
+      &:focus {
+          --ripple-color: #ffffff; /* Asegura que la animación de ripple también sea blanca al enfocar */
+          --color: #ffffff; /* Cambia el color del texto a blanco cuando se enfoca */
+      }
+  }
+}
